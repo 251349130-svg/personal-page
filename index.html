@@ -14,9 +14,9 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 
 /* ---- Hero ---- */
 .hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:10vh;text-align:center}
-.hero-line{font-size:clamp(16px,4.2vw,20px);letter-spacing:.5em;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.7),0 0 30px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
-.hero-title{font-size:clamp(52px,15vw,72px);font-weight:700;letter-spacing:.2em;color:#f0d264;text-shadow:0 0 25px rgba(255,255,255,.9),0 0 50px rgba(255,255,255,.5),0 0 80px rgba(255,255,255,.2);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
-.hero-sub{font-size:clamp(18px,4.5vw,24px);letter-spacing:.8em;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.3);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
+.hero-line{font-size:clamp(16px,4.2vw,20px);letter-spacing:.5em;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.8),0 0 12px rgba(255,255,255,.3);opacity:0;animation:fi 1.5s 1s ease forwards;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300}
+.hero-title{font-size:clamp(52px,15vw,72px);font-weight:700;letter-spacing:.2em;color:#f0d264;text-shadow:0 0 8px rgba(255,255,255,.9),0 0 18px rgba(255,255,255,.5);margin:12px 0 8px;opacity:0;animation:fi 1.8s 1.5s ease forwards}
+.hero-sub{font-size:clamp(18px,4.5vw,24px);letter-spacing:.8em;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.7),0 0 12px rgba(255,255,255,.3);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 2s ease forwards}
 .scroll-hint{position:absolute;bottom:3vh;left:50%;transform:translateX(-50%);font-size:11px;color:#4a4840;letter-spacing:.2em;opacity:0;animation:fi 1s 3s ease forwards}
 .scroll-hint span{display:block;margin-top:4px;animation:bob 2s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
@@ -26,9 +26,9 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .quote-block{margin-bottom:28px;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .quote-block.show{opacity:1;transform:translateY(0)}
 .quote-block:nth-child(2){transition-delay:.2s}
-.quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.7),0 0 30px rgba(255,255,255,.3);letter-spacing:.08em}
-.quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#c8b878;text-shadow:0 0 10px rgba(255,255,255,.4);letter-spacing:.2em}
-.quote-title{margin-top:10px;font-size:clamp(24px,6.5vw,32px);color:#f0d264;text-shadow:0 0 20px rgba(255,255,255,.8),0 0 40px rgba(255,255,255,.4);letter-spacing:.2em;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
+.quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.8),0 0 12px rgba(255,255,255,.3);letter-spacing:.08em}
+.quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#c8b878;text-shadow:0 0 5px rgba(255,255,255,.5);letter-spacing:.2em}
+.quote-title{margin-top:10px;font-size:clamp(24px,6.5vw,32px);color:#f0d264;text-shadow:0 0 8px rgba(255,255,255,.9),0 0 16px rgba(255,255,255,.4);letter-spacing:.2em;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
 .quote-title.show{opacity:1;transform:translateY(0)}
 
 /* ---- Divider ---- */
@@ -39,21 +39,21 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 
 /* ---- Blessing body ---- */
 .blessing{min-height:50vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.bless-body{max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.7),0 0 30px rgba(255,255,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
+.bless-body{max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.8),0 0 12px rgba(255,255,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s ease}
 .bless-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Greeting ---- */
 .greeting{min-height:55vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px;text-align:center}
-.greet-head{font-size:clamp(28px,7.5vw,36px);color:#f0d264;text-shadow:0 0 20px rgba(255,255,255,.8),0 0 40px rgba(255,255,255,.4);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
+.greet-head{font-size:clamp(28px,7.5vw,36px);color:#f0d264;text-shadow:0 0 8px rgba(255,255,255,.9),0 0 16px rgba(255,255,255,.4);letter-spacing:.25em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s ease}
 .greet-head.show{opacity:1;transform:translateY(0)}
-.greet-body{margin-top:28px;max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.7),0 0 30px rgba(255,255,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
+.greet-body{margin-top:28px;max-width:360px;font-size:clamp(20px,5.2vw,24px);line-height:2.4;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.8),0 0 12px rgba(255,255,255,.3);letter-spacing:.08em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(20px);transition:all 1.2s .2s ease}
 .greet-body.show{opacity:1;transform:translateY(0)}
 
 /* ---- Signature ---- */
 .signature{min-height:40vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 28px 12vh;text-align:center}
-.sig-info{font-size:clamp(17px,4.2vw,20px);line-height:2.4;color:#e8d48c;text-shadow:0 0 15px rgba(255,255,255,.6),0 0 30px rgba(255,255,255,.3);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
+.sig-info{font-size:clamp(17px,4.2vw,20px);line-height:2.4;color:#e8d48c;text-shadow:0 0 6px rgba(255,255,255,.7),0 0 12px rgba(255,255,255,.3);letter-spacing:.12em;font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;transform:translateY(15px);transition:all 1s ease}
 .sig-info.show{opacity:1;transform:translateY(0)}
-.sig-name{margin-top:28px;font-size:clamp(18px,4.5vw,22px);color:#f0d264;text-shadow:0 0 18px rgba(255,255,255,.7),0 0 36px rgba(255,255,255,.3);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
+.sig-name{margin-top:28px;font-size:clamp(18px,4.5vw,22px);color:#f0d264;text-shadow:0 0 7px rgba(255,255,255,.8),0 0 14px rgba(255,255,255,.3);letter-spacing:.2em;opacity:0;transition:all 1s .2s ease}
 .sig-name.show{opacity:1}
 
 @keyframes fi{from{opacity:0}to{opacity:1}}

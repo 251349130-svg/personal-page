@@ -28,7 +28,7 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .quote-block:nth-child(2){transition-delay:.2s}
 .quote-text{font-size:clamp(20px,5.2vw,24px);line-height:2.2;color:#fff;text-shadow:0 0 15px rgba(255,255,255,.25);letter-spacing:.08em}
 .quote-src{margin-top:8px;font-size:clamp(14px,3.5vw,16px);color:#a09888;letter-spacing:.2em}
-.quote-title{margin-top:10px;font-size:clamp(26px,7vw,34px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.3em;font-weight:600;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
+.quote-title{margin-top:10px;font-size:clamp(24px,6.5vw,32px);color:#fff;text-shadow:0 0 20px rgba(255,255,255,.3),0 0 40px rgba(201,168,76,.2);letter-spacing:.2em;font-weight:600;white-space:nowrap;opacity:0;transform:translateY(20px);transition:all 1s .4s ease}
 .quote-title.show{opacity:1;transform:translateY(0)}
 
 /* ---- Divider ---- */
@@ -156,12 +156,52 @@ function drawSS(){
   g.addColorStop(0,`rgba(255,250,230,${a})`);g.addColorStop(1,'rgba(255,250,230,0)');ctx.strokeStyle=g;ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.x-s.vx/h*s.len,s.y-s.vy/h*s.len);ctx.stroke()}
 }
 
+// ---- Sagittarius constellation (teapot asterism) ----
+const SGR_STARS=[
+  [.25,.20,2.8,.8],  // γ Nash (spout tip)
+  [.34,.30,3.2,1],   // ε Kaus Australis (brightest)
+  [.38,.18,3.0,.85], // δ Kaus Media
+  [.46,.11,2.4,.7],  // λ Kaus Borealis (lid)
+  [.58,.13,2.4,.65], // φ Phi
+  [.66,.20,3.0,.9],  // σ Nunki
+  [.62,.32,2.2,.6],  // τ Tau
+  [.50,.32,2.6,.75], // ζ Ascella
+];
+const SGR_LINES=[[0,1],[0,2],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,1],[2,4]];
+
+function drawConstellation(t){
+  // subtle connecting lines
+  ctx.strokeStyle='rgba(180,200,220,.1)';
+  ctx.lineWidth=.8;
+  for(const[a,b]of SGR_LINES){
+    const ax=SGR_STARS[a][0]*W,ay=SGR_STARS[a][1]*H;
+    const bx=SGR_STARS[b][0]*W,by=SGR_STARS[b][1]*H;
+    ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
+  }
+  // stars with glow
+  for(const[xp,yp,r,br]of SGR_STARS){
+    const x=xp*W,y=yp*H;
+    const pulse=br*(.85+Math.sin(t*.4+xp*10)*.15);
+    // outer glow
+    const g=ctx.createRadialGradient(x,y,0,x,y,r*5);
+    g.addColorStop(0,`rgba(200,210,230,${pulse*.25})`);
+    g.addColorStop(1,'rgba(200,210,230,0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r*5,0,6.28);ctx.fill();
+    // core star
+    ctx.globalAlpha=pulse;
+    ctx.fillStyle='#e8eaf0';
+    ctx.beginPath();ctx.arc(x,y,r,0,6.28);ctx.fill();
+    ctx.globalAlpha=1;
+  }
+}
+
 // ---- main loop ----
 let t0=null;
 function render(ts){
   if(!t0)t0=ts;
   const el=(ts-t0)/1000,t=el;
   ctx.clearRect(0,0,W,H);
+  drawConstellation(t);
   drawStars(t);
   maybeSS();drawSS();
   requestAnimationFrame(render);

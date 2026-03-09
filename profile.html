@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>九宫社区 · 传统文化垂类知识付费社区</title>
+<title>九宫社区—AI文化数字社区</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -11,12 +11,12 @@ body{background:#080c18;color:#d8d0c0;font-family:'STSongti-SC','Songti SC','Sim
 .vignette{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 30% 20%,rgba(40,30,80,.4),transparent 60%),radial-gradient(ellipse at 70% 60%,rgba(20,30,70,.35),transparent 55%),radial-gradient(ellipse at 50% 90%,rgba(50,20,60,.3),transparent 50%)}
 canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 
-.unicorn{position:fixed;left:-10px;bottom:20px;width:220px;height:auto;opacity:.6;z-index:2;pointer-events:none;mix-blend-mode:screen}
+.unicorn{position:absolute;left:-10px;bottom:0;width:220px;height:auto;opacity:.6;z-index:2;pointer-events:none;mix-blend-mode:screen}
 
 .content{position:relative;z-index:3;max-width:400px;margin:0 auto;padding:0 20px}
 
 /* ---- Hero ---- */
-.hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.hero{height:100vh;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:25vh;text-align:center}
 .hero-name{font-size:clamp(34px,10vw,44px);font-weight:700;letter-spacing:.25em;background:linear-gradient(180deg,#f5d56e 0%,#c9942a 35%,#f5d56e 50%,#a07818 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 6px rgba(255,200,60,.5));opacity:0;animation:fi 1.8s .5s ease forwards,shimmer 3s 2.5s ease-in-out infinite}
 @keyframes shimmer{0%,100%{filter:drop-shadow(0 0 6px rgba(255,200,60,.5))}50%{filter:drop-shadow(0 0 10px rgba(255,210,80,.7))}}
 .hero-sub{margin-top:12px;font-size:clamp(13px,3.5vw,16px);letter-spacing:.35em;color:#c9a030;text-shadow:0 0 6px rgba(255,200,60,.4);font-family:'PingFang SC','Microsoft YaHei',sans-serif;font-weight:300;opacity:0;animation:fi 1.5s 1s ease forwards}
@@ -129,11 +129,11 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 <body>
 <div class="vignette"></div>
 <canvas id="c"></canvas>
-<img class="unicorn" src="马星空.jpg" alt="">
 <div class="content">
 
   <!-- 首屏 -->
-  <section class="hero">
+  <section class="hero" style="position:relative;overflow:hidden">
+    <img class="unicorn" src="马星空.jpg" alt="">
     <div>
       <div class="hero-name">九宫社区</div>
       <div class="hero-sub">传统文化垂类短视频知识付费社区</div>
